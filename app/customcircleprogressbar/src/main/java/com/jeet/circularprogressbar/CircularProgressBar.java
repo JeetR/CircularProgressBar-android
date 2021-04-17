@@ -2,6 +2,7 @@ package com.jeet.circularprogressbar;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -14,6 +15,8 @@ import android.view.animation.LinearInterpolator;
 import androidx.annotation.Nullable;
 
 public class CircularProgressBar extends View {
+    private int mProgressBarColor = getContext().getResources().getColor(R.color.design_default_color_primary);
+    private boolean mShouldAnimateProgress = true;
     Paint strokePaint = new Paint();
     Paint fillPaint = new Paint();
     ValueAnimator progressAnimator;
@@ -43,6 +46,10 @@ public class CircularProgressBar extends View {
     public void setProgress(int progress) {
         if (progress > MAX_PROGRESS_VALUE) {
             progress = MAX_PROGRESS_VALUE;
+        }
+        if (!mShouldAnimateProgress) {
+            setCurrentProgress(progress);
+            return;
         }
         if (progressAnimator != null) {
             progressAnimator.cancel();
@@ -81,18 +88,27 @@ public class CircularProgressBar extends View {
 
     public CircularProgressBar(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        initializeView();
+        TypedArray a = context.getTheme().obtainStyledAttributes(attrs,
+                R.styleable.CircularProgressBar,
+                0,
+                0);
+        try {
+            MAX_PROGRESS_VALUE = a.getInt(R.styleable.CircularProgressBar_maxProgressLimit, 100);
+            MIN_PROGRESS_VALUE = a.getInt(R.styleable.CircularProgressBar_minProgressLimit, 0);
+            currentProgress = a.getInt(R.styleable.CircularProgressBar_progress, 10);
+            mShouldAnimateProgress = a.getBoolean(R.styleable.CircularProgressBar_animateProgress, true);
+            mProgressBarColor = a.getColor(R.styleable.CircularProgressBar_progressBarColor, getContext().getResources().getColor(R.color.design_default_color_primary));
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+
+        } finally {
+            a.recycle();
+            initializeView();
+        }
+
     }
 
-    public CircularProgressBar(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        initializeView();
-    }
-
-    public CircularProgressBar(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        initializeView();
-    }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -138,9 +154,9 @@ public class CircularProgressBar extends View {
     }
 
     private void initializeView() {
-        strokePaint.setColor(Color.GREEN);
+        strokePaint.setColor(mProgressBarColor);
         strokePaint.setStyle(Paint.Style.FILL);
-        strokePaint.setStrokeWidth(10);
+        strokePaint.setStrokeWidth(2);
         fillPaint.setColor(Color.WHITE);
         fillPaint.setStyle(Paint.Style.FILL_AND_STROKE);
         fillPaint.setStrokeWidth(0.5f);

@@ -13,7 +13,7 @@ import android.view.animation.LinearInterpolator;
 
 import androidx.annotation.Nullable;
 
-public class CircularProgressBar extends View {
+public class CircularProgressBarDev extends View {
     Paint strokePaint = new Paint();
     Paint fillPaint = new Paint();
     ValueAnimator progressAnimator;
@@ -74,22 +74,22 @@ public class CircularProgressBar extends View {
     }
 
 
-    public CircularProgressBar(Context context) {
+    public CircularProgressBarDev(Context context) {
         super(context);
         initializeView();
     }
 
-    public CircularProgressBar(Context context, @Nullable AttributeSet attrs) {
+    public CircularProgressBarDev(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         initializeView();
     }
 
-    public CircularProgressBar(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public CircularProgressBarDev(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initializeView();
     }
 
-    public CircularProgressBar(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public CircularProgressBarDev(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         initializeView();
     }

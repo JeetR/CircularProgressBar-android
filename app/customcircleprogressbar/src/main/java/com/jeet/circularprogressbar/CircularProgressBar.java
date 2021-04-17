@@ -162,7 +162,7 @@ public class CircularProgressBar extends View {
             canvas.drawPath(linePath, fillPaint);
         }
         if (mShouldShowProgressText)
-            canvas.drawText(currentProgress + "", getWidth() / 2f - ((getWidth() / 2f) * 0.2f), getHeight()/2f+textPaint.getTextSize()/2f, textPaint);
+            canvas.drawText(currentProgress + "", getWidth() / 2f , getHeight()/2f+textPaint.getTextSize()/2f, textPaint);
 //        canvas.drawLine(getWidth() / 2f, getHeight() / 2f, (float) nextX, (float) nextY, fillPaint);
     }
 
@@ -180,6 +180,7 @@ public class CircularProgressBar extends View {
 //        textPaint.setTextSize(mProgressTextSize);
         textPaint.setStyle(Paint.Style.FILL);
         textPaint.setAntiAlias(true);
+        textPaint.setTextAlign(Paint.Align.CENTER);
 //        strokePaint.setStrokeWidth(10);
     }
 

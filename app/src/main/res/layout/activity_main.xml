@@ -13,7 +13,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        />
 
     <com.jeet.circularprogressbar.CircularProgressBar
         android:id="@+id/customRoundProgressBar"
@@ -25,6 +27,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:maxProgressLimit="60"
         app:progress="50"
+        app:showProgressText="true"
         app:progressBarColor="@android:color/holo_red_dark" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

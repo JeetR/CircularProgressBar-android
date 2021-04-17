@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="CircularProgressBar">
-        <attr name="progressBarColor" format="color"/>
-        <attr name="maxProgressLimit" format="integer"/>
-        <attr name="minProgressLimit" format="integer"/>
-        <attr name="progress" format="integer"/>
-        <attr name="animateProgress" format="boolean"/>
+        <attr name="progressBarColor" format="color" />
+        <attr name="progressTextColor" format="color" />
+        <attr name="maxProgressLimit" format="integer" />
+        <attr name="minProgressLimit" format="integer" />
+        <attr name="progress" format="integer" />
+        <attr name="animateProgress" format="boolean" />
+        <attr name="showProgressText" format="boolean" />
+        <attr name="progressTextSize" format="dimension" />
+
     </declare-styleable>
 
 </resources>

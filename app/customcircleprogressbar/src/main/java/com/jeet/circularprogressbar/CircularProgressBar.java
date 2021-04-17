@@ -15,8 +15,11 @@ import android.view.animation.LinearInterpolator;
 import androidx.annotation.Nullable;
 
 public class CircularProgressBar extends View {
+    private float mProgressTextSize = 20 * getResources().getDisplayMetrics().density;
     private int mProgressBarColor = getContext().getResources().getColor(R.color.design_default_color_primary);
+    private int mProgressTextColor = getContext().getResources().getColor(R.color.design_default_color_secondary);
     private boolean mShouldAnimateProgress = true;
+    private boolean mShouldShowProgressText = true;
     Paint strokePaint = new Paint();
     Paint fillPaint = new Paint();
     ValueAnimator progressAnimator;
@@ -28,6 +31,7 @@ public class CircularProgressBar extends View {
     private RectF rectToDraw = new RectF(0, 0, 100, 100);
     ;
     private Path arcPath;
+    private Paint textPaint = new Paint();
 
     public int getMAX_PROGRESS_VALUE() {
         return MAX_PROGRESS_VALUE;
@@ -62,7 +66,7 @@ public class CircularProgressBar extends View {
             }
         });
         progressAnimator.setInterpolator(new LinearInterpolator());
-        progressAnimator.setDuration(500);
+        progressAnimator.setDuration(150);
         progressAnimator.start();
     }
 
@@ -100,7 +104,10 @@ public class CircularProgressBar extends View {
             currentProgress = a.getInt(R.styleable.CircularProgressBar_progress, 10);
             setProgress(currentProgress);
             mShouldAnimateProgress = a.getBoolean(R.styleable.CircularProgressBar_animateProgress, true);
+            mShouldShowProgressText = a.getBoolean(R.styleable.CircularProgressBar_showProgressText, true);
             mProgressBarColor = a.getColor(R.styleable.CircularProgressBar_progressBarColor, getContext().getResources().getColor(R.color.design_default_color_primary));
+            mProgressTextColor = a.getColor(R.styleable.CircularProgressBar_progressTextColor, getContext().getResources().getColor(R.color.design_default_color_secondary));
+            mProgressTextSize = a.getDimension(R.styleable.CircularProgressBar_progressTextSize, 20) * getResources().getDisplayMetrics().density;
 
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -154,16 +161,25 @@ public class CircularProgressBar extends View {
         } else {
             canvas.drawPath(linePath, fillPaint);
         }
+        if (mShouldShowProgressText)
+            canvas.drawText(currentProgress + "", getWidth() / 2f - ((getWidth() / 2f) * 0.2f), getHeight()/2f+textPaint.getTextSize()/2f, textPaint);
 //        canvas.drawLine(getWidth() / 2f, getHeight() / 2f, (float) nextX, (float) nextY, fillPaint);
     }
 
     private void initializeView() {
         strokePaint.setColor(mProgressBarColor);
         strokePaint.setStyle(Paint.Style.FILL);
-        strokePaint.setStrokeWidth(2);
+        strokePaint.setStrokeWidth(0f);
+//        strokePaint.setAntiAlias(true);
         fillPaint.setColor(Color.WHITE);
-        fillPaint.setStyle(Paint.Style.FILL_AND_STROKE);
-        fillPaint.setStrokeWidth(0.5f);
+        fillPaint.setStyle(Paint.Style.FILL);
+        fillPaint.setStrokeWidth(0f);
+//        fillPaint.setAntiAlias(true);
+        textPaint.setColor(mProgressTextColor);
+        textPaint.setTextSize(mProgressTextSize);
+//        textPaint.setTextSize(mProgressTextSize);
+        textPaint.setStyle(Paint.Style.FILL);
+        textPaint.setAntiAlias(true);
 //        strokePaint.setStrokeWidth(10);
     }
 

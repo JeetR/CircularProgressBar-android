@@ -46,5 +46,13 @@ allprojects {
  maxProgressLimit is 100 by default you can also set minProgressLimit
  ```
  
+ #### Result
+ 
+ ![Result Image](https://github.com/JeetR/CircularProgressBar-android/blob/master/Screenshot_20210417-203527_CustomWidgets.jpg "Circular Progress bar")
+ 
+ 
+ 
  #### you can access this view using findViewById(R.id.customRoundProgressBar) programatically and setup these parameters from the code
+ 
+ 
  

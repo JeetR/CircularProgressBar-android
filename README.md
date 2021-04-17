@@ -18,7 +18,7 @@ allprojects {
 
 ```
 	dependencies {
-	        implementation 'com.github.JeetR:CircularProgressBar-android:Tag'
+	        implementation 'com.github.JeetR:CircularProgressBar-android:1.1.0'
 	}
 ```
 

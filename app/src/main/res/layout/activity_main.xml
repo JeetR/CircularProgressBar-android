@@ -28,6 +28,8 @@
         app:maxProgressLimit="60"
         app:progress="50"
         app:showProgressText="true"
+        app:progressTextSize="16sp"
+        app:progressTextColor="@color/black"
         app:progressBarColor="@android:color/holo_red_dark" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

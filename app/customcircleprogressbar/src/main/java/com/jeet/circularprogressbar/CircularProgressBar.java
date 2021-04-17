@@ -107,7 +107,7 @@ public class CircularProgressBar extends View {
             mShouldShowProgressText = a.getBoolean(R.styleable.CircularProgressBar_showProgressText, true);
             mProgressBarColor = a.getColor(R.styleable.CircularProgressBar_progressBarColor, getContext().getResources().getColor(R.color.design_default_color_primary));
             mProgressTextColor = a.getColor(R.styleable.CircularProgressBar_progressTextColor, getContext().getResources().getColor(R.color.design_default_color_secondary));
-            mProgressTextSize = a.getDimension(R.styleable.CircularProgressBar_progressTextSize, 20) * getResources().getDisplayMetrics().density;
+            mProgressTextSize = a.getDimension(R.styleable.CircularProgressBar_progressTextSize, 20);
 
         } catch (Exception ex) {
             ex.printStackTrace();

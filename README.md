@@ -1,6 +1,6 @@
 # CircularProgressBar-android
 
-[![](https://jitpack.io/v/JeetR/CircularProgressBar-android.svg)](https://jitpack.io/#JeetR/CircularProgressBar-android)
+## Latest version [![](https://jitpack.io/v/JeetR/CircularProgressBar-android.svg)](https://jitpack.io/#JeetR/CircularProgressBar-android)
 
 ### How To install
 
@@ -18,13 +18,13 @@ allprojects {
 
 ```
 	dependencies {
-	        implementation 'com.github.JeetR:CircularProgressBar-android:1.2.0'
+	        implementation 'com.github.JeetR:CircularProgressBar-android:<latest_version>'
 	}
 ```
 
 ### How to use
  
- ** From XML **
+ **From XML**
  
  Provided below is a dummy use case showing usage of all the parameters
  

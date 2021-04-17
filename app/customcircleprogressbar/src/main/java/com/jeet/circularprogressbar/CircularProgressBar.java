@@ -94,8 +94,11 @@ public class CircularProgressBar extends View {
                 0);
         try {
             MAX_PROGRESS_VALUE = a.getInt(R.styleable.CircularProgressBar_maxProgressLimit, 100);
+            setMAX_PROGRESS_VALUE(MAX_PROGRESS_VALUE);
             MIN_PROGRESS_VALUE = a.getInt(R.styleable.CircularProgressBar_minProgressLimit, 0);
+            setMIN_PROGRESS_VALUE(MIN_PROGRESS_VALUE);
             currentProgress = a.getInt(R.styleable.CircularProgressBar_progress, 10);
+            setProgress(currentProgress);
             mShouldAnimateProgress = a.getBoolean(R.styleable.CircularProgressBar_animateProgress, true);
             mProgressBarColor = a.getColor(R.styleable.CircularProgressBar_progressBarColor, getContext().getResources().getColor(R.color.design_default_color_primary));
 
@@ -105,6 +108,7 @@ public class CircularProgressBar extends View {
         } finally {
             a.recycle();
             initializeView();
+//            invalidate();
         }
 
     }

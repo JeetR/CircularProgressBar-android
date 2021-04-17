@@ -23,6 +23,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        app:maxProgressLimit="60"
+        app:progress="50"
+        app:progressBarColor="@android:color/holo_red_dark" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -46,5 +46,5 @@ allprojects {
  maxProgressLimit is 100 by default you can also set minProgressLimit
  ```
  
- #### you can access this view programatically and setup these parameters from the code
+ #### you can access this view using findViewById(R.id.customRoundProgressBar) programatically and setup these parameters from the code
  

@@ -39,6 +39,8 @@ allprojects {
         app:layout_constraintTop_toTopOf="parent"
         app:maxProgressLimit="60"
         app:progress="50"
+        app:maxAnimationDuration="2500"
+        app:animationInterpolator="AccelerateDecelerateInterpolator"
         app:showProgressText="true"
         app:progressTextSize="16sp"
         app:progressTextColor="@color/black"

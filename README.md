@@ -1,6 +1,6 @@
 # CircularProgressBar-android
 
-[![](https://jitpack.io/v/JeetR/CircularProgressBar-android.svg)](https://jitpack.io/#JeetR/CircularProgressBar-android)
+## Latest version [![](https://jitpack.io/v/JeetR/CircularProgressBar-android.svg)](https://jitpack.io/#JeetR/CircularProgressBar-android)
 
 ### How To install
 
@@ -18,13 +18,13 @@ allprojects {
 
 ```
 	dependencies {
-	        implementation 'com.github.JeetR:CircularProgressBar-android:1.1.0'
+	        implementation 'com.github.JeetR:CircularProgressBar-android:<latest_version>'
 	}
 ```
 
 ### How to use
  
- ** From XML **
+ **From XML**
  
  Provided below is a dummy use case showing usage of all the parameters
  
@@ -39,6 +39,9 @@ allprojects {
         app:layout_constraintTop_toTopOf="parent"
         app:maxProgressLimit="60"
         app:progress="50"
+        app:showProgressText="true"
+        app:progressTextSize="16sp"
+        app:progressTextColor="@color/black"
         app:progressBarColor="@android:color/holo_red_dark" />
  
  ```
@@ -48,7 +51,7 @@ allprojects {
  
  #### Result
  
- ![Result Image](https://github.com/JeetR/CircularProgressBar-android/blob/master/Screenshot_20210417-203527_CustomWidgets.jpg "Circular Progress bar")
+ ![Result Image](https://github.com/JeetR/CircularProgressBar-android/blob/master/resultImage.png "Circular Progress bar")
  
  
  

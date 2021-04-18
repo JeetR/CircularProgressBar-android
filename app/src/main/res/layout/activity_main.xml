@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/black"
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,7 +28,10 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:maxProgressLimit="60"
-        app:progress="50"
+        app:progress="51"
+        app:maxAnimationDuration="2500"
+        app:animationInterpolator="AccelerateDecelerateInterpolator"
+
         app:showProgressText="true"
         app:progressTextSize="16sp"
         app:progressTextColor="@color/black"

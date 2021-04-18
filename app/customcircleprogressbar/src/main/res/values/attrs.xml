@@ -9,6 +9,13 @@
         <attr name="animateProgress" format="boolean" />
         <attr name="showProgressText" format="boolean" />
         <attr name="progressTextSize" format="dimension" />
+        <attr name="maxAnimationDuration" format="integer" />
+        <attr name="animationInterpolator" format="enum">
+            <enum name="LinearInterpolator" value="0"/>
+            <enum name="AccelerateDecelerateInterpolator" value="1"/>
+            <enum name="BounceInterpolator" value="2"/>
+        </attr>
+
 
     </declare-styleable>
 

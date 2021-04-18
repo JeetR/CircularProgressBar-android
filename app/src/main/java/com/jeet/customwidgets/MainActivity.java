@@ -7,6 +7,8 @@ import android.os.Handler;
 
 import com.jeet.circularprogressbar.CircularProgressBar;
 
+import java.util.Random;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,9 +33,11 @@ public class MainActivity extends AppCompatActivity {
                 if (currentProgress[0] > 60) {
                     currentProgress[0] = 0;
                 }
-                currentProgress[0] += 2;
+                int max = 60 - currentProgress[0];
+                int min = 5;
+                currentProgress[0] += Math.random() * (max - min + 1) + min;
                 mProgressBar.setProgress(currentProgress[0]);
-                h.postDelayed(this, 1500);
+                h.postDelayed(this, 3000);
             }
         }, 1000);
     }

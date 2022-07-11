@@ -59,5 +59,5 @@ allprojects {
  
  #### you can access this view using findViewById(R.id.customRoundProgressBar) programatically and setup these parameters from the code
  
- 
+ #### Project executed with Determinant Studios (hey[at]determinantstudios.com)
  
